@@ -15,13 +15,10 @@ dotenv.config();
 
 app.use(express.json({ limit: '10mb' }))
 app.use(cors())
-require('dotenv').config()
+
 mongoose
 
-    .connect(process.env.MONGO_URL, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true
-    })
+    .connect("mongodb+srv://manohar:manohar@classroom.uwypa.mongodb.net/student?retryWrites=true&w=majority&appName=classroom")
     .then(console.log("Connected to MongoDB"))
     .catch((err) => console.log("NOT CONNECTED TO NETWORK", err))
 
